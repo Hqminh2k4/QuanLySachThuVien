@@ -149,3 +149,37 @@ Book inputBook(Node *head)
 
     return book;
 }
+//============== chuc nang xoa sach ==============
+int deleteBook(Node **head, char maSach[])
+{
+    if (*head == NULL)
+    {
+        return 0;
+    }
+
+    Node *temp = *head;
+    Node *prev = NULL;
+
+    while (temp != NULL)
+    {
+        if (strcmp(temp->data.maSach, maSach) == 0)
+        {
+            if (prev == NULL)
+            {
+                *head = temp->next;
+            }
+            else
+            {
+                prev->next = temp->next;
+            }
+
+            free(temp);
+            return 1;
+        }
+
+        prev = temp;
+        temp = temp->next;
+    }
+
+    return 0;
+}
