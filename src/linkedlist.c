@@ -183,3 +183,42 @@ int deleteBook(Node **head, char maSach[])
 
     return 0;
 }
+//============== chuc nang cap cap nhat ==============
+int updateBook(Node *head, char maSach[])
+{
+    Node *book = findBookById(head, maSach);
+
+    if (book == NULL)
+    {
+        return 0;
+    }
+
+    getchar();
+
+    printf("Nhap ten sach moi: ");
+    fgets(book->data.tenSach, MAX_NAME, stdin);
+    book->data.tenSach[strcspn(book->data.tenSach, "\n")] = '\0';
+
+    printf("Nhap tac gia moi: ");
+    fgets(book->data.tacGia, MAX_AUTHOR, stdin);
+    book->data.tacGia[strcspn(book->data.tacGia, "\n")] = '\0';
+
+    printf("Nhap the loai moi: ");
+    fgets(book->data.theLoai, MAX_CATEGORY, stdin);
+    book->data.theLoai[strcspn(book->data.theLoai, "\n")] = '\0';
+
+    printf("Nhap nha xuat ban moi: ");
+    fgets(book->data.nhaXuatBan, MAX_PUBLISHER, stdin);
+    book->data.nhaXuatBan[strcspn(book->data.nhaXuatBan, "\n")] = '\0';
+
+    printf("Nhap nam xuat ban moi: ");
+    scanf("%d", &book->data.namXuatBan);
+
+    printf("Nhap gia moi: ");
+    scanf("%f", &book->data.gia);
+
+    printf("Nhap so luong moi: ");
+    scanf("%d", &book->data.soLuong);
+
+    return 1;
+}
