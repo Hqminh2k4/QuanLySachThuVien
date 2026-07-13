@@ -7,6 +7,7 @@
 #include "include/utils.h"
 #include "include/queue.h"
 #include "include/bst.h"
+#include "include/history.h"
 
 int main()
 {
@@ -165,17 +166,34 @@ int main()
         break;
 
         case 16: // Thong ke Tong gia tri Sach (Linked List)
-            printf("\nChuc nang dang phat trien...\n");
+        {
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== THONG KE TONG GIA TRI SACH (LINKED LIST) =====\n" RESET);
+
+
+            if (head == NULL)
+            {
+                printf(YELLOW_TEXT "Danh sach rong!\n" RESET);
+            }
+            else
+            {
+                float totalValue = totalBookValue(head);
+                printf(GREEN_TEXT "Tong gia tri cua tat ca sach: %.0f VND\n" RESET, totalValue);
+            }
             break;
+        }
 
         case 17: // Thong ke So luong Sach theo The Loai (Linked List)
             printf("\nChuc nang dang phat trien...\n");
             break;
 
         case 18: // Xem lich su thao tac
-            printf("\nChuc nang dang phat trien...\n");
+        {
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== LICH SU THAO TAC =====\n" RESET);
+            showHistory();
             break;
-
+        }
         case 0:
             printf("\nCam on ban da su dung chuong trinh!\n");
             break;
