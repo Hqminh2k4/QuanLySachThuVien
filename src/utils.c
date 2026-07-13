@@ -45,7 +45,7 @@ void clearInputBuffer()
 
 void pauseScreen()
 {
-    printf("\nNhan Enter de tiep tuc...");
+    printf(WHITE_BACKGROUND "\nNhan Enter de tiep tuc..." RESET);
     getchar();
 
     clearScreen();

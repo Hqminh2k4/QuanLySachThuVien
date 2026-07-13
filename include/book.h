@@ -1,11 +1,11 @@
 #ifndef BOOK_H
 #define BOOK_H
 
-#define MAX_ID 20
-#define MAX_NAME 100
-#define MAX_AUTHOR 100
-#define MAX_CATEGORY 50
-#define MAX_PUBLISHER 100
+#define MAX_ID 6
+#define MAX_NAME 25
+#define MAX_AUTHOR 25
+#define MAX_CATEGORY 20
+#define MAX_PUBLISHER 25
 
 typedef struct
 {

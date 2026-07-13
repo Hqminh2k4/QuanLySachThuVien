@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../include/linkedlist.h"
+#include "book.h"
+#include "linkedlist.h"
+#include "utils.h"
 
 Node *createNode(Book book)
 {
@@ -57,27 +59,26 @@ void addLast(Node **head, Book book)
 
 void displayBooks(Node *head)
 {
+    clearScreen();
+
+    printf(GREEN_BACKGROUND "\n===== DANH SACH SACH =====\n" RESET);
+
     if (head == NULL)
     {
-        printf("Danh sach rong!\n");
+        printf(YELLOW_TEXT "Danh sach rong!\n" RESET);
         return;
     }
 
-    printf("\n===== DANH SACH SACH =====\n");
+    printf("%-6s %-25s %-25s %-20s %-25s %-6s %-10s %-4s\n", "Ma", "Ten sach", "Tac gia", "The loai", "Nha XB", "Nam XB", "Gia", "SL");
+    printf("----------------------------------------------------------------------------------------------------------------------------------\n");
 
     Node *temp = head;
 
     while (temp != NULL)
     {
-        printf("Ma sach: %s\n", temp->data.maSach);
-        printf("Ten sach: %s\n", temp->data.tenSach);
-        printf("Tac gia: %s\n", temp->data.tacGia);
-        printf("The loai: %s\n", temp->data.theLoai);
-        printf("Nam XB: %d\n", temp->data.namXuatBan);
-        printf("Gia: %.0f\n", temp->data.gia);
-        printf("So luong: %d\n", temp->data.soLuong);
-        printf("-----------------------------\n");
-
+        printf("%-6s %-25s %-25s %-20s %-25s %6d %10.0f %4d\n",
+               temp->data.maSach, temp->data.tenSach, temp->data.tacGia, temp->data.theLoai,
+               temp->data.nhaXuatBan, temp->data.namXuatBan, temp->data.gia, temp->data.soLuong);
         temp = temp->next;
     }
 }
