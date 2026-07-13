@@ -2,10 +2,10 @@
 #define BOOK_H
 
 #define MAX_ID 6
-#define MAX_NAME 25
+#define MAX_NAME 30
 #define MAX_AUTHOR 25
 #define MAX_CATEGORY 20
-#define MAX_PUBLISHER 25
+#define MAX_PUBLISHER 30
 
 typedef struct
 {

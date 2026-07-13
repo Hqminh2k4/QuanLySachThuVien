@@ -1,3 +1,10 @@
-S001|Sach tham khao A|Nguyen Van A|Tham khao|NXB Abc|2020|45000|10
-S002|Sach tham khao B|Tran Van B|Tham khao|NXB Abc|2022|50000|5
-S003|Sach tham khao C|Nguyen Van A|Tham khao|NXB Abc|2021|42500|12
+S103|Lap trinh C co ban|Le Minh Tuan|Giao trinh|NXB Tre|2019|78000|8
+S218|Cau truc du lieu|Pham Thu Ha|Giao trinh|NXB Dai hoc Quoc gia|2021|95000|6
+S076|Nhap mon tri tue nhan tao|Do Anh Khoa|Tham khao|NXB Khoa hoc va Ky thuat|2023|120000|4
+S159|Kiem thu phan mem|Nguyen Thi Lan|Tham khao|NXB Lao dong|2020|67000|9
+S284|Thiet ke co so du lieu|Tran Quoc Bao|Giao trinh|NXB Hong Duc|2022|88000|7
+S341|Co so lap trinh Python|Pham Minh Duc|Giao trinh|NXB Tre|2024|99000|10
+S502|Mang may tinh|Le Thu Hang|Tham khao|NXB Giao duc|2021|85000|5
+S127|Ky thuat phan mem|Nguyen Quang Huy|Giao trinh|NXB Dai hoc Quoc gia|2023|110000|6
+S689|Co so du lieu nang cao|Tran Thi Mai|Tham khao|NXB Khoa hoc va Ky thuat|2022|125000|3
+S954|Tri tue nhan tao ung dung|Hoang Van Nam|Giao trinh|NXB Hong Duc|2024|135000|4
