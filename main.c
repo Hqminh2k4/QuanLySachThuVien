@@ -66,7 +66,7 @@ int main()
             char maSach[MAX_ID];
 
             printf("Nhap ma sach can xoa: ");
-            scanf("%6", maSach);
+            scanf("%6s", maSach);
 
             if (deleteBook(&head, maSach))
                 printf("\nXoa thanh cong!\n");
