@@ -36,4 +36,7 @@ void freeList(Node **head);
 
 Book inputBook(Node *head);
 
+// Tong gia tri của tat ca sach
+float totalBookValue(Node *head);
+
 #endif

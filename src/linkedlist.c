@@ -150,3 +150,17 @@ Book inputBook(Node *head)
 
     return book;
 }
+// Tong gia tri của tat ca sach
+float totalBookValue(Node *head)
+{
+    float totalValue = 0.0f;
+    Node *temp = head;
+
+    while (temp != NULL)
+    {
+        totalValue += temp->data.gia * temp->data.soLuong;
+        temp = temp->next;
+    }
+
+    return totalValue;
+}
