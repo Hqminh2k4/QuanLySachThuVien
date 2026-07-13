@@ -3,21 +3,33 @@
 #include "utils.h"
 
 const char *functions[] = {
-    "Them 1 Sach vao cuoi",
-    "Hien thi danh sach Sach",
-    "Sua thong tin 1 Sach",
-    "Xoa 1 Sach",
-    "Sap xep theo Ten Sach (BST Inorder)",
-    "Tim kiem theo Ma Sach (BST)",
+    // Co ban
+    "Them 1 Sach vao cuoi", // Minh
+    "Hien thi danh sach Sach", // Tu
+    "Sua thong tin 1 Sach", // Duy
+    "Xoa 1 Sach", // Duy
 
-    "Undo (Stack)",
+    "Tim kiem theo ma sach (Linked List)", // Minh
+    "Tim kiem theo ten sach (Linked List)", // Tu
 
-    "Tim kiem (Linked List)...",
-    "Chuc nang hang doi (Queue)...",
-    "Duyet danh sach (BST)...",
-    "Thong ke...",
+    "Sap xep theo ma sach (Linked List)", // Tu
+    "Sap xep theo ten sach (Linked List)", // Minh
 
-    "Xem lich su thao tac",
+    // Nang cao
+    "Duyet danh sach Preorder (BST)", // Tu
+    "Duyet danh sach Inorder (BST)", // Duy
+    "Duyet danh sach Postorder (BST)", // Minh
+
+    "Tim kiem theo Ma Sach (BST)", // Duy
+    "Tim kiem theo Ten Sach (BST)", // Tu
+
+    "Undo (Stack)", // Minh
+    "Them nhieu Sach (Queue)", // Tu
+
+    "Thong ke Tong gia tri Sach (Linked List)", // Duy
+    "Thong ke So luong Sach theo The Loai (Linked List)", // Minh
+
+    "Xem lich su thao tac", // Duy (file history.txt)
 };
 
 void menu()
