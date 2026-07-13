@@ -6,6 +6,7 @@
 #include "include/file.h"
 #include "include/utils.h"
 #include "include/queue.h"
+#include "include/bst.h"
 
 int main()
 {
@@ -65,8 +66,37 @@ int main()
             break;
 
         case 10: // Duyet danh sach Inorder (BST)
-            printf("\nChuc nang dang phat trien...\n");
-            break;
+        {
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== DUYET DANH SACH INORDER (BST) =====\n" RESET);
+
+            BSTNode *root = NULL;
+
+            buildBSTFromList(&root, head);
+
+            if (root == NULL)
+            {
+                printf(YELLOW_TEXT "\nDanh sach rong!\n" RESET);
+            }
+            else
+            {
+                printf("%-6s %-25s %-25s %-20s %-25s %6s %10s %4s\n",
+                    "Ma",
+                    "Ten sach",
+                    "Tac gia",
+                    "The loai",
+                    "Nha XB",
+                    "Nam",
+                    "Gia",
+                    "SL");
+
+                printf("---------------------------------------------------------------------------------------------------------------\n");
+
+                inorder(root);
+        }
+
+        break;
+}
 
         case 11: // Duyet danh sach Postorder (BST)
             printf("\nChuc nang dang phat trien...\n");
