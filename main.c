@@ -7,6 +7,7 @@
 #include "include/file.h"
 #include "include/utils.h"
 #include "include/queue.h"
+#include "include/bst.h"
 
 int main()
 {
@@ -117,8 +118,17 @@ int main()
             break;
 
         case 9: // Duyet danh sach Preorder (BST)
-            printf("\nChuc nang dang phat trien...\n");
+        {
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== DUYET DANH SACH PREORDER (BST) =====\n" RESET);
+
+            BSTRoot root = NULL;
+            insertBSTNodeFromLinkedList(&root, head);
+
+            Node *result = browsePreorder(root);
+            displayBooks(result);
             break;
+        }
 
         case 10: // Duyet danh sach Inorder (BST)
             printf("\nChuc nang dang phat trien...\n");

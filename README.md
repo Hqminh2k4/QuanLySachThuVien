@@ -7,7 +7,7 @@
 | Tú  | Hien thi danh sach Sach              | [x]        |
 | Tú  | Tim kiem theo Ten Sach (Linked List) | [x]        |
 | Tú  | Sap xep theo Ma Sach (Linked List)   | [x]        |
-| Tú  | Duyet danh sach Preorder (BST)       | [ ]        |
+| Tú  | Duyet danh sach Preorder (BST)       | [x]        |
 | Tú  | Tim kiem theo Ten Sach (BST)         | [ ]        |
 | Tú  | Them nhieu Sach (Queue)              | [x]        |
 
