@@ -37,12 +37,35 @@ int main()
             break;
 
         case 3: // Sua thong tin 1 Sach
-            printf("\nChuc nang dang phat trien...\n");
+        {
+            char maSach[MAX_ID];
+
+            printf("Nhap ma sach can cap nhat: ");
+            scanf("%19s", maSach);
+
+            if (updateBook(head, maSach))
+
+                printf("\nCap nhat thanh cong!\n");
+
+            else
+                printf("\nKhong tim thay sach!\n");
+
             break;
+        }
 
         case 4: // Xoa 1 Sach
-            printf("\nChuc nang dang phat trien...\n");
+        {
+            char maSach[MAX_ID];
+
+            printf("Nhap ma sach can xoa: ");
+            scanf("%19s", maSach);
+
+            if (deleteBook(&head, maSach))
+                printf("\nXoa thanh cong!\n");
+            else
+                printf("\nKhong tim thay sach!\n");
             break;
+        }
 
         case 5: // Tim kiem theo ma sach (Linked List)
             printf("\nChuc nang dang phat trien...\n");
