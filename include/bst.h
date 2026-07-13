@@ -24,7 +24,7 @@ void buildBSTFromList(BSTNode **root, Node *head);
 // Duyet Inorder
 void inorder(BSTNode *root);
 
-// Tim sach theo ma
-BSTNode *searchBookByIdBST(BSTNode *root, char maSach[]);
+// TIM KIEM 
+BSTNode *findBookByIdBST(BSTNode *root, char maSach[]);
 
 #endif
