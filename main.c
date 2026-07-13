@@ -81,7 +81,7 @@ int main()
         case 6: // Tim kiem theo ten sach (Linked List)
         {
             clearScreen();
-            printf(GREEN_BACKGROUND "\n===== Tim kiem theo ten sach (Linked List) =====\n" RESET);
+            printf(GREEN_BACKGROUND "\n===== TIM KIEM THEO TEN SACH (LINKED LIST) =====\n" RESET);
 
             char tenSach[MAX_NAME];
             printf("Nhap ten sach can tim: ");
@@ -104,8 +104,13 @@ int main()
         }
 
         case 7: // Sap xep theo ma sach (Linked List)
-            printf("\nChuc nang dang phat trien...\n");
+        {
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== SAP XEP THEO MA SACH (LINKED LIST) =====\n" RESET);
+            sortBooksById(&head);
+            displayBooks(head);
             break;
+        }
 
         case 8: // Sap xep theo ten sach (Linked List)
             printf("\nChuc nang dang phat trien...\n");
@@ -159,8 +164,6 @@ int main()
                 addLast(&head, node->data);
                 free(node);
             }
-
-            saveList(head);
         }
         break;
 
@@ -175,6 +178,21 @@ int main()
         case 18: // Xem lich su thao tac
             printf("\nChuc nang dang phat trien...\n");
             break;
+
+        case 19: // Doc danh sach Sach tu file
+        {
+            freeList(&head);
+            loadList(&head);
+            printf(GREEN_TEXT "\nDoc danh sach sach tu file thanh cong!\n" RESET);
+            break;
+        }
+
+        case 20: // Luu danh sach Sach vao file
+        {
+            saveList(head);
+            printf(GREEN_TEXT "\nLuu danh sach sach vao file thanh cong!\n" RESET);
+            break;
+        }
 
         case 0:
             printf("\nCam on ban da su dung chuong trinh!\n");

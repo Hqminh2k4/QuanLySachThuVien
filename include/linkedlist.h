@@ -29,6 +29,10 @@ int deleteBook(Node **head, char maSach[]);
 // Cập nhật
 int updateBook(Node *head, char maSach[]);
 
+// Sắp xếp
+void sortBooksById(Node **head);
+void sortBooksByName(Node **head);
+
 // Kiểm tra trùng mã
 int isDuplicateId(Node *head, char maSach[]);
 

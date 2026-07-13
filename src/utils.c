@@ -3,7 +3,7 @@
 
 #include "utils.h"
 
-const char *functions[] = {
+const static char *functions[] = {
     // Co ban
     "Them 1 Sach vao cuoi",    // Minh
     "Hien thi danh sach Sach", // Tu
@@ -31,6 +31,9 @@ const char *functions[] = {
     "Thong ke So luong Sach theo The Loai (Linked List)", // Minh
 
     "Xem lich su thao tac", // Duy (file history.txt)
+
+    "Doc danh sach Sach tu file",
+    "Lưu danh sach Sach vao file",
 };
 
 void menu()
@@ -40,7 +43,7 @@ void menu()
         "      HE THONG QUAN LY SACH THU VIEN      \n"
         "=========================================\n");
 
-    for (int i = 0; i < 18; i++)
+    for (int i = 0; i < 20; i++)
     {
         printf("%d. %s\n", i + 1, functions[i]);
     }

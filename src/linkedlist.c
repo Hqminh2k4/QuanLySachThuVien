@@ -65,14 +65,14 @@ void displayBooks(Node *head)
         return;
     }
 
-    printf("%-6s %-25s %-25s %-20s %-25s %6s %10s %4s\n", "Ma", "Ten sach", "Tac gia", "The loai", "Nha XB", "Nam XB", "Gia", "SL");
-    printf("----------------------------------------------------------------------------------------------------------------------------------\n");
+    printf("%-6s %-30s %-25s %-20s %-30s %6s %10s %4s\n", "Ma", "Ten sach", "Tac gia", "The loai", "Nha XB", "Nam XB", "Gia", "SL");
+    printf("------------------------------------------------------------------------------------------------------------------------------------------\n");
 
     Node *temp = head;
 
     while (temp != NULL)
     {
-        printf("%-6s %-25s %-25s %-20s %-25s %6d %10.0f %4d\n",
+        printf("%-6s %-30s %-25s %-20s %-30s %6d %10.0f %4d\n",
                temp->data.maSach, temp->data.tenSach, temp->data.tacGia, temp->data.theLoai,
                temp->data.nhaXuatBan, temp->data.namXuatBan, temp->data.gia, temp->data.soLuong);
         temp = temp->next;
@@ -121,6 +121,17 @@ Node *findBookByName(Node *head, char tenSach[])
 int isDuplicateId(Node *head, char maSach[])
 {
     return findBookById(head, maSach) != NULL;
+}
+
+void freeList(Node **head)
+{
+    Node *temp;
+    while (*head != NULL)
+    {
+        temp = *head;
+        *head = (*head)->next;
+        free(temp);
+    }
 }
 
 Book inputBook(Node *head)
@@ -240,4 +251,26 @@ int updateBook(Node *head, char maSach[])
     scanf("%d", &book->data.soLuong);
 
     return 1;
+}
+
+void sortBooksById(Node **head)
+{
+    if (*head == NULL || (*head)->next == NULL)
+        return;
+
+    Node *current, *next_node;
+    Book temp_book;
+
+    for (current = *head; current != NULL; current = current->next)
+    {
+        for (next_node = current->next; next_node != NULL; next_node = next_node->next)
+        {
+            if (strcmp(current->data.maSach, next_node->data.maSach) > 0)
+            {
+                temp_book = current->data;
+                current->data = next_node->data;
+                next_node->data = temp_book;
+            }
+        }
+    }
 }
