@@ -4,29 +4,29 @@
 
 const char *functions[] = {
     // Co ban
-    "Them 1 Sach vao cuoi", // Minh
+    "Them 1 Sach vao cuoi",    // Minh
     "Hien thi danh sach Sach", // Tu
-    "Sua thong tin 1 Sach", // Duy
-    "Xoa 1 Sach", // Duy
+    "Sua thong tin 1 Sach",    // Duy
+    "Xoa 1 Sach",              // Duy
 
-    "Tim kiem theo ma sach (Linked List)", // Minh
-    "Tim kiem theo ten sach (Linked List)", // Tu
+    "Tim kiem theo Ma Sach (Linked List)",  // Minh
+    "Tim kiem theo Ten Sach (Linked List)", // Tu
 
-    "Sap xep theo ma sach (Linked List)", // Tu
-    "Sap xep theo ten sach (Linked List)", // Minh
+    "Sap xep theo Ma Sach (Linked List)",  // Tu
+    "Sap xep theo Ten Sach (Linked List)", // Minh
 
     // Nang cao
-    "Duyet danh sach Preorder (BST)", // Tu
-    "Duyet danh sach Inorder (BST)", // Duy
+    "Duyet danh sach Preorder (BST)",  // Tu
+    "Duyet danh sach Inorder (BST)",   // Duy
     "Duyet danh sach Postorder (BST)", // Minh
 
-    "Tim kiem theo Ma Sach (BST)", // Duy
+    "Tim kiem theo Ma Sach (BST)",  // Duy
     "Tim kiem theo Ten Sach (BST)", // Tu
 
-    "Undo (Stack)", // Minh
+    "Undo (Stack)",            // Minh
     "Them nhieu Sach (Queue)", // Tu
 
-    "Thong ke Tong gia tri Sach (Linked List)", // Duy
+    "Thong ke Tong gia tri Sach (Linked List)",           // Duy
     "Thong ke So luong Sach theo The Loai (Linked List)", // Minh
 
     "Xem lich su thao tac", // Duy (file history.txt)
