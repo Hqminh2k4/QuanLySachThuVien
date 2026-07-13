@@ -3,7 +3,7 @@
 
 #include <linkedlist.h>
 
-typedef struct
+typedef struct Queue
 {
     Node *front;
     Node *rear;

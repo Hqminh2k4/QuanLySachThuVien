@@ -49,7 +49,7 @@ int main()
             char maSach[MAX_ID];
 
             printf("Nhap ma sach can cap nhat: ");
-            scanf("%19s", maSach);
+            scanf("%6s", maSach);
 
             if (updateBook(head, maSach))
 
@@ -66,7 +66,7 @@ int main()
             char maSach[MAX_ID];
 
             printf("Nhap ma sach can xoa: ");
-            scanf("%19s", maSach);
+            scanf("%6", maSach);
 
             if (deleteBook(&head, maSach))
                 printf("\nXoa thanh cong!\n");
@@ -86,7 +86,7 @@ int main()
 
             char tenSach[MAX_NAME];
             printf("Nhap ten sach can tim: ");
-            scanf("%24[^\n]", tenSach);
+            scanf("%29[^\n]", tenSach);
             clearInputBuffer();
 
             Node *book = findBookByName(head, tenSach);
@@ -143,8 +143,32 @@ int main()
             break;
 
         case 13: // Tim kiem theo Ten Sach (BST)
-            printf("\nChuc nang dang phat trien...\n");
+        {
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== TIM KIEM THEO TEN SACH (BST) =====\n" RESET);
+
+            BSTRoot root = NULL;
+            insertBSTNodeForNameFromLinkedList(&root, head);
+
+            char tenSach[MAX_NAME];
+            printf("Nhap ten sach can tim: ");
+            scanf("%29[^\n]", tenSach);
+            clearInputBuffer();
+
+            Node *book = searchByBookName(root, tenSach);
+
+            if (book != NULL)
+            {
+                printf(GREEN_TEXT "\nTim thay sach:\n" RESET);
+                displayBooks(book);
+            }
+            else
+            {
+                printf(YELLOW_TEXT "\nKhong tim thay sach!\n" RESET);
+            }
+
             break;
+        }
 
         case 14: // Undo (Stack)
             printf("\nChuc nang dang phat trien...\n");

@@ -7,7 +7,7 @@
 #define MAX_CATEGORY 20
 #define MAX_PUBLISHER 30
 
-typedef struct
+typedef struct Book
 {
     char maSach[MAX_ID];
     char tenSach[MAX_NAME];

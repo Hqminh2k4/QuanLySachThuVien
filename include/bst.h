@@ -12,7 +12,9 @@ typedef struct BSTNode
 } BSTNode, *BSTRoot;
 
 void insertBSTNode(BSTRoot *root, Book book);
+void insertBSTNodeForName(BSTRoot *root, Book book);
 void insertBSTNodeFromLinkedList(BSTRoot *root, Node *head);
+void insertBSTNodeForNameFromLinkedList(BSTRoot *root, Node *head);
 void balanceBST(BSTRoot *root);
 Node *browsePreorder(BSTRoot root);
 Node *searchByBookName(BSTRoot root, const char *tenSach);
