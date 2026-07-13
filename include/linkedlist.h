@@ -21,6 +21,7 @@ void displayBooks(Node *head);
 
 // Tìm kiếm
 Node *findBookById(Node *head, char maSach[]);
+Node *findBookByName(Node *head, char tenSach[]);
 
 // Xóa
 int deleteBook(Node **head, char maSach[]);

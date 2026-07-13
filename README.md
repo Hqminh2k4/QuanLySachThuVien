@@ -5,7 +5,7 @@
 | Tên | Tên chức năng                        | Trạng thái |
 | --- | ------------------------------------ | ---------- |
 | Tú  | Hien thi danh sach Sach              | [x]        |
-| Tú  | Tim kiem theo Ten Sach (Linked List) | [ ]        |
+| Tú  | Tim kiem theo Ten Sach (Linked List) | [x]        |
 | Tú  | Sap xep theo Ma Sach (Linked List)   | [ ]        |
 | Tú  | Duyet danh sach Preorder (BST)       | [ ]        |
 | Tú  | Tim kiem theo Ten Sach (BST)         | [ ]        |

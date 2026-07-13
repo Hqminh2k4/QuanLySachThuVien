@@ -59,10 +59,6 @@ void addLast(Node **head, Book book)
 
 void displayBooks(Node *head)
 {
-    clearScreen();
-
-    printf(GREEN_BACKGROUND "\n===== DANH SACH SACH =====\n" RESET);
-
     if (head == NULL)
     {
         printf(YELLOW_TEXT "Danh sach rong!\n" RESET);
@@ -98,6 +94,28 @@ Node *findBookById(Node *head, char maSach[])
     }
 
     return NULL;
+}
+
+Node *findBookByName(Node *head, char tenSach[])
+{
+    Node *temp = head;
+    Node *result = NULL;
+
+    stringToLower(tenSach);
+
+    while (temp != NULL)
+    {
+        char *tenSachLower = strdup(temp->data.tenSach);
+        stringToLower(tenSachLower);
+        if (strstr(tenSachLower, tenSach) != NULL)
+        {
+            addLast(&result, temp->data);
+        }
+
+        temp = temp->next;
+    }
+
+    return result;
 }
 
 int isDuplicateId(Node *head, char maSach[])

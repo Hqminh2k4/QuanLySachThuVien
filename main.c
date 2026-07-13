@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "include/book.h"
 #include "include/linkedlist.h"
@@ -12,10 +13,12 @@ int main()
     Node *head = NULL;
     loadList(&head);
 
-    int choice;
+    int choice = -1;
 
     do
     {
+        choice = -1;
+
         menu();
 
         printf("Nhap lua chon: ");
@@ -33,8 +36,12 @@ int main()
             break;
 
         case 2: // Hien thi danh sach Sach
+        {
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== DANH SACH SACH =====\n" RESET);
             displayBooks(head);
             break;
+        }
 
         case 3: // Sua thong tin 1 Sach
         {
@@ -72,8 +79,29 @@ int main()
             break;
 
         case 6: // Tim kiem theo ten sach (Linked List)
-            printf("\nChuc nang dang phat trien...\n");
+        {
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== Tim kiem theo ten sach (Linked List) =====\n" RESET);
+
+            char tenSach[MAX_NAME];
+            printf("Nhap ten sach can tim: ");
+            scanf("%24[^\n]", tenSach);
+            clearInputBuffer();
+
+            Node *book = findBookByName(head, tenSach);
+
+            if (book != NULL)
+            {
+                printf(GREEN_TEXT "\nTim thay sach:\n" RESET);
+                displayBooks(book);
+            }
+            else
+            {
+                printf(YELLOW_TEXT "\nKhong tim thay sach!\n" RESET);
+            }
+
             break;
+        }
 
         case 7: // Sap xep theo ma sach (Linked List)
             printf("\nChuc nang dang phat trien...\n");
@@ -154,6 +182,7 @@ int main()
 
         default:
             printf("\nLua chon khong hop le!\n");
+            break;
         }
 
         if (choice != 0)

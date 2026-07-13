@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "utils.h"
 
@@ -68,4 +69,15 @@ void clearScreen()
     // \e[1;1H di chuyen con tro ve vi tri (1,1)
     // \e[2J xoa toan bo man hinh
     printf("\e[1;1H\e[2J");
+}
+
+void stringToLower(char *str)
+{
+    for (int i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+        {
+            str[i] += 32;
+        }
+    }
 }
