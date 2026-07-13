@@ -17,8 +17,8 @@
 | Duy | Xoa 1 Sach                               | [x]        |
 | Duy | Duyet danh sach Inorder (BST)            | [x]        |
 | Duy | Tim kiem theo Ma Sach (BST)              | [x]        |
-| Duy | Thong ke Tong gia tri Sach (Linked List) | [ ]        |
-| Duy | Xem lich su thao tac                     | [ ]        |
+| Duy | Thong ke Tong gia tri Sach (Linked List) | [x]        |
+| Duy | Xem lich su thao tac                     | [x]        |
 
 | Tên  | Tên chức năng                                      | Trạng thái |
 | ---- | -------------------------------------------------- | ---------- |
