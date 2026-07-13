@@ -39,7 +39,7 @@ void menu()
         "      HE THONG QUAN LY SACH THU VIEN      \n"
         "=========================================\n");
 
-    for (int i = 0; i < 12; i++)
+    for (int i = 0; i < 18; i++)
     {
         printf("%d. %s\n", i + 1, functions[i]);
     }

@@ -1,12 +1,14 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "include/book.h"
 #include "include/linkedlist.h"
 #include "include/file.h"
 #include "include/utils.h"
+#include "include/queue.h"
 
 int main()
-{   
+{
     Node *head = NULL;
     loadList(&head);
 
@@ -23,31 +25,112 @@ int main()
 
         switch (choice)
         {
-            case 1:
+        case 1: // Them 1 Sach vao cuoi
+            Book book = inputBook(head);
+            addLast(&head, book);
+
+            printf("\nThem sach thanh cong!\n");
+            break;
+
+        case 2: // Hien thi danh sach Sach
+            displayBooks(head);
+            break;
+
+        case 3: // Sua thong tin 1 Sach
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 4: // Xoa 1 Sach
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 5: // Tim kiem theo ma sach (Linked List)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 6: // Tim kiem theo ten sach (Linked List)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 7: // Sap xep theo ma sach (Linked List)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 8: // Sap xep theo ten sach (Linked List)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 9: // Duyet danh sach Preorder (BST)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 10: // Duyet danh sach Inorder (BST)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 11: // Duyet danh sach Postorder (BST)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 12: // Tim kiem theo Ma Sach (BST)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 13: // Tim kiem theo Ten Sach (BST)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 14: // Undo (Stack)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 15: // Them nhieu Sach (Queue)
+        {
+            Queue queue;
+            initQueue(&queue);
+
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== NHAP NHIEU SACH (QUEUE) =====\n" RESET);
+            char answer;
+            do
+            {
                 Book book = inputBook(head);
-                addLast(&head, book);
+                enqueue(&queue, createNode(book));
 
-                printf("\nThem sach thanh cong!\n");
-                break;
+                printf(GREEN_TEXT "Ban co muon nhap them sach khong? (y/n): " RESET);
+                clearInputBuffer();
+                scanf("%c", &answer);
+            } while (answer != 'n' && answer != 'N');
 
-            case 2:
-                displayBooks(head);
-                break;
+            while (!isEmpty(&queue))
+            {
+                Node *node = dequeue(&queue);
+                addLast(&head, node->data);
+                free(node);
+            }
 
-            case 3:
-                displayBooks(head);
-                break;
+            saveList(head);
+        }
+        break;
 
-            case 4:
-                printf("\nChuc nang tim kiem dang phat trien...\n");
-                break;
+        case 16: // Thong ke Tong gia tri Sach (Linked List)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
 
-            case 0:
-                printf("\nCam on ban da su dung chuong trinh!\n");
-                break;
+        case 17: // Thong ke So luong Sach theo The Loai (Linked List)
+            printf("\nChuc nang dang phat trien...\n");
+            break;
 
-            default:
-                printf("\nLua chon khong hop le!\n");
+        case 18: // Xem lich su thao tac
+            printf("\nChuc nang dang phat trien...\n");
+            break;
+
+        case 0:
+            printf("\nCam on ban da su dung chuong trinh!\n");
+            break;
+
+        default:
+            printf("\nLua chon khong hop le!\n");
         }
 
         if (choice != 0)

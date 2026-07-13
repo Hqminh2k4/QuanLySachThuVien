@@ -69,7 +69,7 @@ void displayBooks(Node *head)
         return;
     }
 
-    printf("%-6s %-25s %-25s %-20s %-25s %-6s %-10s %-4s\n", "Ma", "Ten sach", "Tac gia", "The loai", "Nha XB", "Nam XB", "Gia", "SL");
+    printf("%-6s %-25s %-25s %-20s %-25s %6s %10s %4s\n", "Ma", "Ten sach", "Tac gia", "The loai", "Nha XB", "Nam XB", "Gia", "SL");
     printf("----------------------------------------------------------------------------------------------------------------------------------\n");
 
     Node *temp = head;
@@ -112,7 +112,7 @@ Book inputBook(Node *head)
     do
     {
         printf("Nhap ma sach: ");
-        scanf("%19s", book.maSach);
+        scanf("%6s", book.maSach);
 
         if (isDuplicateId(head, book.maSach))
         {
@@ -121,7 +121,7 @@ Book inputBook(Node *head)
 
     } while (isDuplicateId(head, book.maSach));
 
-    getchar(); // Xóa ký tự '\n' còn lại
+    clearInputBuffer();
 
     printf("Nhap ten sach: ");
     fgets(book.tenSach, sizeof(book.tenSach), stdin);
