@@ -15,8 +15,8 @@
 | --- | ---------------------------------------- | ---------- |
 | Duy | Sua thong tin 1 Sach                     | [x]        |
 | Duy | Xoa 1 Sach                               | [x]        |
-| Duy | Duyet danh sach Inorder (BST)            | [ ]        |
-| Duy | Tim kiem theo Ma Sach (BST)              | [ ]        |
+| Duy | Duyet danh sach Inorder (BST)            | [x]        |
+| Duy | Tim kiem theo Ma Sach (BST)              | [x]        |
 | Duy | Thong ke Tong gia tri Sach (Linked List) | [ ]        |
 | Duy | Xem lich su thao tac                     | [ ]        |
 
