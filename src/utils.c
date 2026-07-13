@@ -1,35 +1,59 @@
 #include <stdio.h>
-#include "../include/utils.h"
+
+#include "utils.h"
+
+const char *functions[] = {
+    "Them 1 Sach vao cuoi",
+    "Hien thi danh sach Sach",
+    "Sua thong tin 1 Sach",
+    "Xoa 1 Sach",
+    "Sap xep theo Ten Sach (BST Inorder)",
+    "Tim kiem theo Ma Sach (BST)",
+
+    "Undo (Stack)",
+
+    "Tim kiem (Linked List)...",
+    "Chuc nang hang doi (Queue)...",
+    "Duyet danh sach (BST)...",
+    "Thong ke...",
+
+    "Xem lich su thao tac",
+};
 
 void menu()
 {
-    printf("\n=========================================\n");
-    printf("      LIBRARY MANAGEMENT SYSTEM\n");
-    printf("=========================================\n");
-    printf("1. Nhap danh sach sach\n");
-    printf("2. Them sach\n");
-    printf("3. Hien thi danh sach\n");
-    printf("4. Tim kiem sach\n");
-    printf("5. Xoa sach\n");
-    printf("6. Cap nhat thong tin sach\n");
-    printf("7. Sap xep danh sach\n");
-    printf("8. Thong ke\n");
-    printf("9. Doc du lieu tu file\n");
-    printf("10. Ghi du lieu vao file\n");
-    printf("11. Stack (Undo)\n");
-    printf("12. Queue\n");
-    printf("13. BST\n");
-    printf("0. Thoat\n");
-    printf("=========================================\n");
+    printf(
+        "\n=========================================\n"
+        "      HE THONG QUAN LY SACH THU VIEN      \n"
+        "=========================================\n");
+
+    for (int i = 0; i < 12; i++)
+    {
+        printf("%d. %s\n", i + 1, functions[i]);
+    }
+
+    printf(
+        "0. Thoat\n"
+        "=========================================\n");
 }
 
 void clearInputBuffer()
 {
-    while (getchar() != '\n');
+    while (getchar() != '\n')
+        ;
 }
 
 void pauseScreen()
 {
     printf("\nNhan Enter de tiep tuc...");
     getchar();
+
+    clearScreen();
+}
+
+void clearScreen()
+{
+    // \e[1;1H di chuyen con tro ve vi tri (1,1)
+    // \e[2J xoa toan bo man hinh
+    printf("\e[1;1H\e[2J");
 }

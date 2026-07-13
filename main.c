@@ -2,11 +2,14 @@
 
 #include "include/book.h"
 #include "include/linkedlist.h"
+#include "include/file.h"
 #include "include/utils.h"
 
 int main()
 {   
     Node *head = NULL;
+    loadList(&head);
+
     int choice;
 
     do
@@ -21,14 +24,14 @@ int main()
         switch (choice)
         {
             case 1:
-                printf("\nChuc nang nhap danh sach dang phat trien...\n");
-                break;
-
-            case 2:
                 Book book = inputBook(head);
                 addLast(&head, book);
 
                 printf("\nThem sach thanh cong!\n");
+                break;
+
+            case 2:
+                displayBooks(head);
                 break;
 
             case 3:
