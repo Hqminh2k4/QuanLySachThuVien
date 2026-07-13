@@ -5,7 +5,7 @@
 #include "include/utils.h"
 
 int main()
-{   
+{
     Node *head = NULL;
     int choice;
 
@@ -20,31 +20,54 @@ int main()
 
         switch (choice)
         {
-            case 1:
-                printf("\nChuc nang nhap danh sach dang phat trien...\n");
-                break;
+        case 1:
+            printf("\nChuc nang nhap danh sach dang phat trien...\n");
+            break;
 
-            case 2:
-                Book book = inputBook(head);
-                addLast(&head, book);
+        case 2:
+            Book book = inputBook(head);
+            addLast(&head, book);
 
-                printf("\nThem sach thanh cong!\n");
-                break;
+            printf("\nThem sach thanh cong!\n");
+            break;
 
-            case 3:
-                displayBooks(head);
-                break;
+        case 3:
+            // Cap nhat
+        {
+            char maSach[MAX_ID];
 
-            case 4:
-                printf("\nChuc nang tim kiem dang phat trien...\n");
-                break;
+            printf("Nhap ma sach can cap nhat: ");
+            scanf("%19s", maSach);
 
-            case 0:
-                printf("\nCam on ban da su dung chuong trinh!\n");
-                break;
+            if (updateBook(head, maSach))
 
-            default:
-                printf("\nLua chon khong hop le!\n");
+                printf("\nCap nhat thanh cong!\n");
+
+            else
+                printf("\nKhong tim thay sach!\n");
+
+            break;
+        }
+        case 4:
+            // Xoa
+        {
+            char maSach[MAX_ID];
+
+        printf("Nhap ma sach can xoa: ");
+        scanf("%19s", maSach);
+
+        if (deleteBook(&head, maSach))
+            printf("\nXoa thanh cong!\n");
+        else
+            printf("\nKhong tim thay sach!\n");
+        break;
+        }
+        case 0:
+            printf("\nCam on ban da su dung chuong trinh!\n");
+            break;
+
+        default:
+            printf("\nLua chon khong hop le!\n");
         }
 
         if (choice != 0)
