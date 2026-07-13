@@ -27,4 +27,6 @@ void inorder(BSTNode *root);
 // TIM KIEM 
 BSTNode *findBookByIdBST(BSTNode *root, char maSach[]);
 
+// Hien thi 1 sach
+void displayBookBST(BSTNode *book);
 #endif

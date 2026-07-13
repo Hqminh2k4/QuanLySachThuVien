@@ -73,9 +73,30 @@ int main()
             break;
 
         case 12: // Tim kiem theo Ma Sach (BST)
-            printf("\nChuc nang dang phat trien...\n");
-            break;
+        {
+            BSTNode *root = NULL;
+            buildBSTFromList(&root, head);
 
+             char maSach[MAX_ID];
+
+            printf("Nhap ma sach can tim: ");
+            scanf("%19s", maSach);
+
+            BSTNode *book = findBookByIdBST(root, maSach);
+
+            if (book != NULL)
+            {
+                    printf("\nTim thay sach!\n");
+                    displayBookBST(book);
+            }
+            else
+            {
+                printf("\nKhong tim thay sach!\n");
+            }
+        }
+
+        break;
+}
         case 13: // Tim kiem theo Ten Sach (BST)
             printf("\nChuc nang dang phat trien...\n");
             break;
