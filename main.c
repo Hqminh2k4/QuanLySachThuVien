@@ -8,6 +8,7 @@
 #include "include/utils.h"
 #include "include/queue.h"
 #include "include/bst.h"
+#include "include/history.h"
 
 int main()
 {
@@ -131,16 +132,66 @@ int main()
         }
 
         case 10: // Duyet danh sach Inorder (BST)
-            printf("\nChuc nang dang phat trien...\n");
+        {
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== DUYET DANH SACH INORDER (BST) =====\n" RESET);
+
+            BSTNode *root = NULL;
+
+            buildBSTFromList(&root, head);
+
+            if (root == NULL)
+            {
+                printf(YELLOW_TEXT "\nDanh sach rong!\n" RESET);
+            }
+            else
+            {
+                printf("%-6s %-25s %-25s %-20s %-25s %6s %10s %4s\n",
+                       "Ma",
+                       "Ten sach",
+                       "Tac gia",
+                       "The loai",
+                       "Nha XB",
+                       "Nam",
+                       "Gia",
+                       "SL");
+
+                printf("---------------------------------------------------------------------------------------------------------------\n");
+
+                inorder(root);
+            }
+
             break;
+        }
 
         case 11: // Duyet danh sach Postorder (BST)
             printf("\nChuc nang dang phat trien...\n");
             break;
 
         case 12: // Tim kiem theo Ma Sach (BST)
-            printf("\nChuc nang dang phat trien...\n");
-            break;
+        {
+            BSTNode *root = NULL;
+            buildBSTFromList(&root, head);
+
+            char maSach[MAX_ID];
+
+            printf("Nhap ma sach can tim: ");
+            scanf("%19s", maSach);
+
+            BSTNode *book = findBookByIdBST(root, maSach);
+
+            if (book != NULL)
+            {
+                printf("\nTim thay sach!\n");
+                displayBooks(book);
+            }
+            else
+            {
+                printf("\nKhong tim thay sach!\n");
+            }
+        }
+
+        break;
 
         case 13: // Tim kiem theo Ten Sach (BST)
         {
@@ -202,16 +253,33 @@ int main()
         break;
 
         case 16: // Thong ke Tong gia tri Sach (Linked List)
-            printf("\nChuc nang dang phat trien...\n");
+        {
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== THONG KE TONG GIA TRI SACH (LINKED LIST) =====\n" RESET);
+
+            if (head == NULL)
+            {
+                printf(YELLOW_TEXT "Danh sach rong!\n" RESET);
+            }
+            else
+            {
+                float totalValue = totalBookValue(head);
+                printf(GREEN_TEXT "Tong gia tri cua tat ca sach: %.0f VND\n" RESET, totalValue);
+            }
             break;
+        }
 
         case 17: // Thong ke So luong Sach theo The Loai (Linked List)
             printf("\nChuc nang dang phat trien...\n");
             break;
 
         case 18: // Xem lich su thao tac
-            printf("\nChuc nang dang phat trien...\n");
+        {
+            clearScreen();
+            printf(GREEN_BACKGROUND "\n===== LICH SU THAO TAC =====\n" RESET);
+            showHistory();
             break;
+        }
 
         case 19: // Doc danh sach Sach tu file
         {

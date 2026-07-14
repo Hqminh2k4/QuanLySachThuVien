@@ -4,14 +4,29 @@
 
 #include "bst.h"
 
+//============ TAO NODE BST ============
+BSTNode *createBSTNode(Book book)
+{
+    BSTNode *newNode = (BSTNode *)malloc(sizeof(BSTNode));
+
+    if (newNode == NULL)
+    {
+        printf("Khong du bo nho!\n");
+        return NULL;
+    }
+
+    newNode->data = book;
+    newNode->left = NULL;
+    newNode->right = NULL;
+
+    return newNode;
+}
+
 void insertBSTNode(BSTRoot *root, Book book)
 {
     if (*root == NULL)
     {
-        *root = (BSTNode *)malloc(sizeof(BSTNode));
-        (*root)->data = book;
-        (*root)->left = NULL;
-        (*root)->right = NULL;
+        *root = createBSTNode(book);
     }
     else if (strcmp(book.maSach, (*root)->data.maSach) < 0)
         insertBSTNode(&((*root)->left), book);
@@ -23,10 +38,7 @@ void insertBSTNodeForName(BSTRoot *root, Book book)
 {
     if (*root == NULL)
     {
-        *root = (BSTNode *)malloc(sizeof(BSTNode));
-        (*root)->data = book;
-        (*root)->left = NULL;
-        (*root)->right = NULL;
+        *root = createBSTNode(book);
     }
     else if (strcmp(book.tenSach, (*root)->data.tenSach) < 0)
     {
@@ -83,4 +95,27 @@ Node *searchByBookName(BSTRoot root, const char *tenSach)
     }
 
     return NULL;
+}
+
+//============ DUYET INORDER ============
+void inorder(BSTNode *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    inorder(root->left);
+
+    printf("%-6s %-25s %-25s %-20s %-25s %6d %10.0f %4d\n",
+           root->data.maSach,
+           root->data.tenSach,
+           root->data.tacGia,
+           root->data.theLoai,
+           root->data.nhaXuatBan,
+           root->data.namXuatBan,
+           root->data.gia,
+           root->data.soLuong);
+
+    inorder(root->right);
 }
