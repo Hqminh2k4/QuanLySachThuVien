@@ -58,6 +58,7 @@ int main()
 
             else
                 printf("\nKhong tim thay sach!\n");
+            clearInputBuffer();
 
             break;
         }
@@ -73,6 +74,8 @@ int main()
                 printf("\nXoa thanh cong!\n");
             else
                 printf("\nKhong tim thay sach!\n");
+                //
+            clearInputBuffer();
             break;
         }
 
@@ -138,7 +141,7 @@ int main()
 
             BSTNode *root = NULL;
 
-            buildBSTFromList(&root, head);
+            insertBSTNodeFromLinkedList(&root, head);
 
             if (root == NULL)
             {
@@ -171,14 +174,14 @@ int main()
         case 12: // Tim kiem theo Ma Sach (BST)
         {
             BSTNode *root = NULL;
-            buildBSTFromList(&root, head);
+            insertBSTNodeFromLinkedList(&root, head);
 
             char maSach[MAX_ID];
 
             printf("Nhap ma sach can tim: ");
             scanf("%19s", maSach);
 
-            BSTNode *book = findBookByIdBST(root, maSach);
+            Node *book = findBookByIdBST(root, maSach);
 
             if (book != NULL)
             {

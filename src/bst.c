@@ -119,3 +119,8 @@ void inorder(BSTNode *root)
 
     inorder(root->right);
 }
+
+Node *findBookByIdBST(BSTNode *root, char maSach[])
+{
+    return NULL;
+}

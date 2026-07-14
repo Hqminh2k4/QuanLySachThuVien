@@ -25,6 +25,6 @@ Node *searchByBookName(BSTRoot root, const char *tenSach);
 void inorder(BSTNode *root);
 
 // TIM KIEM 
-BSTNode *findBookByIdBST(BSTNode *root, char maSach[]);
+Node *findBookByIdBST(BSTNode *root, char maSach[]);
 
 #endif

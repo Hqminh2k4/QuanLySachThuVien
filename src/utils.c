@@ -33,7 +33,7 @@ const static char *functions[] = {
     "Xem lich su thao tac", // Duy (file history.txt)
 
     "Doc danh sach Sach tu file",
-    "Lưu danh sach Sach vao file",
+    "Luu danh sach Sach vao file",
 };
 
 void menu()
@@ -61,7 +61,7 @@ void clearInputBuffer()
 
 void pauseScreen()
 {
-    printf(WHITE_BACKGROUND "\nNhan Enter de tiep tuc..." RESET);
+    printf(WHITE_BACKGROUND BLACK_TEXT "\nNhan Enter de tiep tuc..." RESET);
     getchar();
 
     clearScreen();
