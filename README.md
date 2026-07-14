@@ -23,8 +23,8 @@
 | Tên  | Tên chức năng                                      | Trạng thái |
 | ---- | -------------------------------------------------- | ---------- |
 | Minh | Them 1 Sach vao cuoi                               | [x]        |
-| Minh | Tim kiem theo Ma Sach (Linked List)                | [ ]        |
-| Minh | Sap xep theo Ten Sach (Linked List)                | [ ]        |
-| Minh | Duyet danh sach Postorder (BST)                    | [ ]        |
-| Minh | Undo (Stack)                                       | [ ]        |
-| Minh | Thong ke So luong Sach theo The Loai (Linked List) | [ ]        |
+| Minh | Tim kiem theo Ma Sach (Linked List)                | [x]        |
+| Minh | Sap xep theo Ten Sach (Linked List)                | [x]        |
+| Minh | Duyet danh sach Postorder (BST)                    | [x]        |
+| Minh | Undo (Stack)                                       | [x]        |
+| Minh | Thong ke So luong Sach theo The Loai (Linked List) | [x]        |
