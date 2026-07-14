@@ -127,7 +127,6 @@ int main()
 
             clearInputBuffer();
             break;
-
         }
 
         case 5: // Tim kiem theo ma sach (Linked List)
@@ -266,14 +265,14 @@ int main()
             else
             {
                 printf("%-6s %-25s %-25s %-20s %-25s %6s %10s %4s\n",
-                    "Ma",
-                    "Ten sach",
-                    "Tac gia",
-                    "The loai",
-                    "Nha XB",
-                    "Nam",
-                    "Gia",
-                    "SL");
+                       "Ma",
+                       "Ten sach",
+                       "Tac gia",
+                       "The loai",
+                       "Nha XB",
+                       "Nam",
+                       "Gia",
+                       "SL");
 
                 printf("---------------------------------------------------------------------------------------------------------------\n");
 
@@ -282,6 +281,7 @@ int main()
 
             break;
         }
+
         case 12: // Tim kiem theo Ma Sach (BST)
         {
             BSTNode *root = NULL;
@@ -297,7 +297,7 @@ int main()
             if (book != NULL)
             {
                 printf("\nTim thay sach!\n");
-          
+
                 displayBooks(book);
                 free(book);
             }
@@ -307,8 +307,7 @@ int main()
             }
             clearInputBuffer();
 
-
-        break;
+            break;
         }
 
         case 13: // Tim kiem theo Ten Sach (BST)
@@ -386,15 +385,16 @@ int main()
         case 15: // Them nhieu Sach (Queue)
         {
             Queue queue;
-            initQueue(&queue);
+            initQueue(&queue); // Khởi tạo hàng đợi
 
             clearScreen();
             printf(GREEN_BACKGROUND "\n===== NHAP NHIEU SACH (QUEUE) =====\n" RESET);
+            
             char answer;
             do
             {
-                Book book = inputBook(head);
-                enqueue(&queue, createNode(book));
+                Book book = inputBook(queue.front); // Nhập thông tin sách từ người dùng
+                enqueue(&queue, createNode(book));  // Thêm sách vào hàng đợi
 
                 printf(GREEN_TEXT "Ban co muon nhap them sach khong? (y/n): " RESET);
                 clearInputBuffer();
@@ -403,12 +403,27 @@ int main()
 
             while (!isEmpty(&queue))
             {
-                Node *node = dequeue(&queue);
-                addLast(&head, node->data);
-                free(node);
+                Node *node = dequeue(&queue); // Lấy sách từ hàng đợi
+                addLast(&head, node->data);   // Thêm sách vào DSLK
+
+                // Them thao tac undo
+                UndoData undo;
+                undo.action = ACTION_ADD;
+                undo.book = node->data;
+                push(&undoStack, undo);
+
+                // Ghi history
+                char message[40];
+                snprintf(message, sizeof(message), "Them sach %s vao cuoi tu hang doi", node->data.maSach);
+                writeHistory(message);
+
+                free(node); // Giải phóng node đã được thêm vào DSLK
             }
+
+            printf(GREEN_TEXT "Them nhieu sach thanh cong!\n" RESET);
+            clearInputBuffer();
+            break;
         }
-        break;
 
         case 16: // Thong ke Tong gia tri Sach (Linked List)
         {
@@ -428,7 +443,7 @@ int main()
         }
 
         case 17: // Thong ke So luong Sach theo The Loai (Linked List)
-       {
+        {
             clearScreen();
             printf(GREEN_BACKGROUND "\n===== THONG KE SO LUONG SACH THEO THE LOAI =====\n" RESET);
 
@@ -439,11 +454,11 @@ int main()
 
         case 18: // Xem lich su thao tac
         {
-             clearScreen();
+            clearScreen();
 
             printf(GREEN_BACKGROUND "\n===== LICH SU THAO TAC =====\n" RESET);
 
-            showHistory();   // <-- Chỉ gọi ở đây
+            showHistory(); // <-- Chỉ gọi ở đây
 
             break;
         }

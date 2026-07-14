@@ -116,20 +116,18 @@ Node *findBookById(Node *head, char maSach[])
 
 Node *findBookByName(Node *head, char tenSach[])
 {
-    Node *temp = head;
-    Node *result = NULL;
-
-    stringToLower(tenSach);
-
+    Node *temp = head;      // Dùng để duyệt DSLK chính
+    Node *result = NULL;    // DSLK cho kết quả tìm kiếm
+    stringToLower(tenSach); // Để không phân biệt hoa thường khi tìm kiếm
     while (temp != NULL)
     {
         char *tenSachLower = strdup(temp->data.tenSach);
-        stringToLower(tenSachLower);
-        if (strstr(tenSachLower, tenSach) != NULL)
+        stringToLower(tenSachLower);               // Để không phân biệt hoa thường khi tìm kiếm
+        if (strstr(tenSachLower, tenSach) != NULL) // Nếu tên sách chứa chuỗi tìm kiếm
         {
-            addLast(&result, temp->data);
+            addLast(&result, temp->data); // thì thêm vào danh sách kết quả
         }
-
+        free(tenSachLower); // Giải phóng bộ nhớ tạm
         temp = temp->next;
     }
 
@@ -197,6 +195,7 @@ Book inputBook(Node *head)
 
     return book;
 }
+
 //============== chuc nang xoa sach ==============
 int deleteBook(Node **head, char maSach[])
 {
@@ -274,17 +273,18 @@ int updateBook(Node *head, char maSach[])
 void sortBooksById(Node **head)
 {
     if (*head == NULL || (*head)->next == NULL)
-        return;
+        return; // Nếu danh sách rỗng hoặc chỉ có một phần tử, không cần sắp xếp
 
     Node *current, *next_node;
     Book temp_book;
-
-    for (current = *head; current != NULL; current = current->next)
+    // Interchange sort
+    for (current = *head; current->next != NULL; current = current->next)
     {
         for (next_node = current->next; next_node != NULL; next_node = next_node->next)
         {
             if (strcmp(current->data.maSach, next_node->data.maSach) > 0)
             {
+                // Swap data giữa hai node
                 temp_book = current->data;
                 current->data = next_node->data;
                 next_node->data = temp_book;

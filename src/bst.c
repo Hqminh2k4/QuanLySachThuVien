@@ -25,9 +25,8 @@ BSTNode *createBSTNode(Book book)
 void insertBSTNode(BSTRoot *root, Book book)
 {
     if (*root == NULL)
-    {
-        *root = createBSTNode(book);
-    }
+        *root = createBSTNode(book); // Thêm node mới nếu cây rỗng
+    // Nếu không, so sánh mã sách để xác định vị trí thêm
     else if (strcmp(book.maSach, (*root)->data.maSach) < 0)
         insertBSTNode(&((*root)->left), book);
     else
@@ -37,17 +36,12 @@ void insertBSTNode(BSTRoot *root, Book book)
 void insertBSTNodeForName(BSTRoot *root, Book book)
 {
     if (*root == NULL)
-    {
-        *root = createBSTNode(book);
-    }
+        *root = createBSTNode(book); // Thêm node mới nếu cây rỗng
+    // Nếu không, so sánh tên sách để xác định vị trí thêm
     else if (strcmp(book.tenSach, (*root)->data.tenSach) < 0)
-    {
         insertBSTNodeForName(&((*root)->left), book);
-    }
     else
-    {
         insertBSTNodeForName(&((*root)->right), book);
-    }
 }
 
 void insertBSTNodeFromLinkedList(BSTRoot *root, Node *head)
@@ -85,16 +79,16 @@ Node *searchByBookName(BSTRoot root, const char *tenSach)
 {
     if (root != NULL)
     {
-        int comparison = strcasecmp(root->data.tenSach, tenSach);
-        if (comparison == 0)
-            return createNode(root->data);
-        else if (comparison > 0)
+        int cmp = strcasecmp(root->data.tenSach, tenSach);
+        if (cmp == 0)
+            return createNode(root->data); // Tìm thấy, trả về bản sao
+        else if (cmp > 0)
             return searchByBookName(root->left, tenSach);
 
         return searchByBookName(root->right, tenSach);
     }
 
-    return NULL;
+    return NULL; // Không tìm thấy
 }
 
 //============ DUYET INORDER ============
@@ -163,4 +157,3 @@ Node *findBookByIdBST(BSTNode *root, char maSach[])
 
     return findBookByIdBST(root->right, maSach);
 }
-
