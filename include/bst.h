@@ -23,6 +23,8 @@ Node *searchByBookName(BSTRoot root, const char *tenSach);
 
 // Duyet Inorder
 void inorder(BSTNode *root);
+// Duyet Postorder
+void postorder(BSTNode *root);
 
 // TIM KIEM 
 Node *findBookByIdBST(BSTNode *root, char maSach[]);

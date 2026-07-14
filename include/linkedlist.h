@@ -18,6 +18,7 @@ void addLast(Node **head, Book book);
 
 // Hiển thị
 void displayBooks(Node *head);
+void displayBook(Book book);
 
 // Tìm kiếm
 Node *findBookById(Node *head, char maSach[]);
@@ -43,5 +44,12 @@ Book inputBook(Node *head);
 
 // Tong gia tri của tat ca sach
 float totalBookValue(Node *head);
+// Thống kê số lượng sách theo thể loại
+void statisticByCategory(Node *head);
+//Undo
+void replaceBook(Node *head, Book book);
 
+//Lấy vị trí của sách để Undo
+int getBookPosition(Node *head, char maSach[]);
+void insertAtPosition(Node **head, Book book, int position);
 #endif

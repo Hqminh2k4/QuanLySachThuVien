@@ -79,6 +79,24 @@ void displayBooks(Node *head)
     }
 }
 
+void displayBook(Book book)
+{
+    printf("%-6s %-30s %-25s %-20s %-30s %6s %10s %4s\n",
+           "Ma", "Ten sach", "Tac gia", "The loai", "Nha XB", "Nam XB", "Gia", "SL");
+
+    printf("------------------------------------------------------------------------------------------------------------------------------------------\n");
+
+    printf("%-6s %-30s %-25s %-20s %-30s %6d %10.0f %4d\n",
+           book.maSach,
+           book.tenSach,
+           book.tacGia,
+           book.theLoai,
+           book.nhaXuatBan,
+           book.namXuatBan,
+           book.gia,
+           book.soLuong);
+}
+//Tìm kiếm theo mã sách
 Node *findBookById(Node *head, char maSach[])
 {
     Node *temp = head;
@@ -274,6 +292,28 @@ void sortBooksById(Node **head)
         }
     }
 }
+//Sắp xếp theo tên sách 
+void sortBooksByName(Node **head)
+{
+    if (*head == NULL || (*head)->next == NULL)
+        return;
+
+    Node *current, *next_node;
+    Book temp_book;
+
+    for (current = *head; current != NULL; current = current->next)
+    {
+        for (next_node = current->next; next_node != NULL; next_node = next_node->next)
+        {
+            if (strcmp(current->data.tenSach, next_node->data.tenSach) > 0)
+            {
+                temp_book = current->data;
+                current->data = next_node->data;
+                next_node->data = temp_book;
+            }
+        }
+    }
+}
 // Tong gia tri của tat ca sach
 float totalBookValue(Node *head)
 {
@@ -287,4 +327,81 @@ float totalBookValue(Node *head)
     }
 
     return totalValue;
+}
+//Thống kê số lượng sách theo thể loại
+void statisticByCategory(Node *head)
+{
+    if (head == NULL)
+    {
+        printf("Danh sach rong!\n");
+        return;
+    }
+
+    int giaoTrinh = 0;
+    int thamKhao = 0;
+
+    Node *temp = head;
+
+    while (temp != NULL)
+    {
+        if (strcmp(temp->data.theLoai, "Giao trinh") == 0)
+        {
+            giaoTrinh++;
+        }
+        else if (strcmp(temp->data.theLoai, "Tham khao") == 0)
+        {
+            thamKhao++;
+        }
+
+        temp = temp->next;
+    }
+
+    printf("\n%-20s %5d sach\n", "Giao trinh:", giaoTrinh);
+    printf("%-20s %5d sach\n", "Tham khao:", thamKhao);
+}
+//Undo
+void replaceBook(Node *head, Book book)
+{
+    Node *temp = findBookById(head, book.maSach);
+
+    if (temp != NULL)
+    {
+        temp->data = book;
+    }
+}
+//Lấy vị trí sách để Undo
+int getBookPosition(Node *head, char maSach[])
+{
+    int pos = 0;
+
+    while (head != NULL)
+    {
+        if (strcmp(head->data.maSach, maSach) == 0)
+            return pos;
+
+        pos++;
+        head = head->next;
+    }
+
+    return -1;
+}
+void insertAtPosition(Node **head, Book book, int position)
+{
+    if (position <= 0 || *head == NULL)
+    {
+        addFirst(head, book);
+        return;
+    }
+
+    Node *newNode = createNode(book);
+
+    Node *temp = *head;
+
+    for (int i = 0; i < position - 1 && temp->next != NULL; i++)
+    {
+        temp = temp->next;
+    }
+
+    newNode->next = temp->next;
+    temp->next = newNode;
 }

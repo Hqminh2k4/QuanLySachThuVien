@@ -119,6 +119,28 @@ void inorder(BSTNode *root)
 
     inorder(root->right);
 }
+//Duyệt postorder
+void postorder(BSTNode *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    postorder(root->left);
+
+    postorder(root->right);
+
+    printf("%-6s %-25s %-25s %-20s %-25s %6d %10.0f %4d\n",
+           root->data.maSach,
+           root->data.tenSach,
+           root->data.tacGia,
+           root->data.theLoai,
+           root->data.nhaXuatBan,
+           root->data.namXuatBan,
+           root->data.gia,
+           root->data.soLuong);
+}
 
 Node *findBookByIdBST(BSTNode *root, char maSach[])
 {
