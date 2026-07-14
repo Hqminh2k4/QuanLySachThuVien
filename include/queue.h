@@ -5,8 +5,8 @@
 
 typedef struct Queue
 {
-    Node *front;
-    Node *rear;
+    Node *front; // Trỏ đến phần tử đầu tiên
+    Node *rear; // Trỏ đến phần tử cuối cùng
 } Queue;
 
 void initQueue(Queue *q);

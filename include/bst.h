@@ -6,9 +6,9 @@
 
 typedef struct BSTNode
 {
-    Book data;
-    struct BSTNode *left;
-    struct BSTNode *right;
+    Book data;              // Dữ liệu sách
+    struct BSTNode *left;   // Trỏ đến phần tử con bên trái
+    struct BSTNode *right;  // Trỏ đến phần tử con bên phải
 } BSTNode, *BSTRoot;
 
 // Tao node BST

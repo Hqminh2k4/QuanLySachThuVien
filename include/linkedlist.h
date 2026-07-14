@@ -5,8 +5,8 @@
 
 typedef struct Node
 {
-    Book data;
-    struct Node *next;
+    Book data;          // Dữ liệu sách
+    struct Node *next;  // Trỏ đến phần tử kế tiếp
 } Node;
 
 // Tạo node mới

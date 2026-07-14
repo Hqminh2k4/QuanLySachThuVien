@@ -9,15 +9,15 @@
 
 typedef struct Book
 {
-    char maSach[MAX_ID];
-    char tenSach[MAX_NAME];
-    char tacGia[MAX_AUTHOR];
-    char theLoai[MAX_CATEGORY];
-    char nhaXuatBan[MAX_PUBLISHER];
+    char maSach[MAX_ID];            // Mã sách tối đa 6 ký tự
+    char tenSach[MAX_NAME];         // Tên sách tối đa 30 ký tự
+    char tacGia[MAX_AUTHOR];        // Tác giả tối đa 25 ký tự
+    char theLoai[MAX_CATEGORY];     // Thể loại tối đa 20 ký tự
+    char nhaXuatBan[MAX_PUBLISHER]; // Nhà xuất bản tối đa 30 ký tự
 
-    int namXuatBan;
-    float gia;
-    int soLuong;
+    int namXuatBan; // Năm xuất bản
+    float gia;      // Giá trị sách
+    int soLuong;    // Số lượng sách hiện có
 
 } Book;
 
