@@ -94,10 +94,10 @@ int main()
                 printf("---------------------------------------------------------------------------------------------------------------\n");
 
                 inorder(root);
-        }
+            }
 
         break;
-}
+        }
 
         case 11: // Duyet danh sach Postorder (BST)
             printf("\nChuc nang dang phat trien...\n");
@@ -127,7 +127,7 @@ int main()
         }
 
         break;
-}
+
         case 13: // Tim kiem theo Ten Sach (BST)
             printf("\nChuc nang dang phat trien...\n");
             break;
