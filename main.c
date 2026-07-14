@@ -34,6 +34,7 @@ int main()
             Book book = inputBook(head);
             addLast(&head, book);
 
+            writeHistory("Them 1 Sach vao cuoi");
             printf("\nThem sach thanh cong!\n");
             break;
 
@@ -53,12 +54,16 @@ int main()
             scanf("%6s", maSach);
 
             if (updateBook(head, maSach))
+            {
 
+                writeHistory("Sua thong tin 1 Sach");
                 printf("\nCap nhat thanh cong!\n");
-
+            }
             else
+            {
                 printf("\nKhong tim thay sach!\n");
-            clearInputBuffer();
+                clearInputBuffer();
+            }
 
             break;
         }
@@ -71,10 +76,13 @@ int main()
             scanf("%6s", maSach);
 
             if (deleteBook(&head, maSach))
+            {
                 printf("\nXoa thanh cong!\n");
+               writeHistory("Xoa 1 Sach");
+            }
             else
                 printf("\nKhong tim thay sach!\n");
-                //
+             
             clearInputBuffer();
             break;
         }
@@ -186,15 +194,19 @@ int main()
             if (book != NULL)
             {
                 printf("\nTim thay sach!\n");
+          
                 displayBooks(book);
+                free(book);
             }
             else
             {
                 printf("\nKhong tim thay sach!\n");
             }
-        }
+            clearInputBuffer();
+
 
         break;
+        }
 
         case 13: // Tim kiem theo Ten Sach (BST)
         {
@@ -278,9 +290,12 @@ int main()
 
         case 18: // Xem lich su thao tac
         {
-            clearScreen();
+             clearScreen();
+
             printf(GREEN_BACKGROUND "\n===== LICH SU THAO TAC =====\n" RESET);
-            showHistory();
+
+            showHistory();   // <-- Chỉ gọi ở đây
+
             break;
         }
 

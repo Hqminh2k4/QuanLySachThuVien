@@ -122,5 +122,23 @@ void inorder(BSTNode *root)
 
 Node *findBookByIdBST(BSTNode *root, char maSach[])
 {
-    return NULL;
+    if (root == NULL)
+    {
+        return NULL;
+    }
+
+    int cmp = strcmp(maSach, root->data.maSach);
+
+    if (cmp == 0)
+    {
+        return createNode(root->data);
+    }
+
+    if (cmp < 0)
+    {
+        return findBookByIdBST(root->left, maSach);
+    }
+
+    return findBookByIdBST(root->right, maSach);
 }
+
